@@ -1,13 +1,16 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
+import "./statewise.css";
 
 const Statewise = () => {
   const [data, setData] = useState([]);
 
   const getCovidData = async () => {
-    const res = await fetch("https://api.covid19india.org/data.json");
-    const actualData = await res.json();
-    console.log(actualData.statewise);
-    setData(actualData.statewise);
+    const res = await axios.get("https://api.covid19india.org/data.json");
+    //const actualData = res.json();
+    console.log(res.data);
+    //console.log(actualData);
+    setData(res.data.statewise);
   };
 
   useEffect(() => {
@@ -40,7 +43,7 @@ const Statewise = () => {
                   <tr key={ind}>
                     <td>{curElem.state}</td>
                     <td>{curElem.confirmed}</td>
-                    <td>{curElem.recover}</td>
+                    <td>{curElem.recovered}</td>
                     <td>{curElem.deaths}</td>
                     <td>{curElem.active}</td>
                     <td>{curElem.lastupdatedtime}</td>

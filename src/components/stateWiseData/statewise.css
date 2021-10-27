@@ -10,15 +10,27 @@
 .container-fluid {
   width: 90%;
   margin: auto;
+  text-align: center;
+}
+
+.table {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 
 .table-responsive {
   max-height: 700px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  display: flex;
+  justify-content: center;
+  margin: 40px 20px;
 }
 
 tr:hover {
   background-color: #ffa;
+}
+
+th {
+  background: #444;
+  color: #f4f4f4;
 }
 
 td,
