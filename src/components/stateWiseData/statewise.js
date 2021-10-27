@@ -6,7 +6,9 @@ const Statewise = () => {
   const [data, setData] = useState([]);
 
   const getCovidData = async () => {
-    const res = await axios.get("https://api.covid19india.org/data.json");
+    const res = await axios.get(
+      "https://cors-anywhere.herokuapp.com/https://api.covid19india.org/data.json"
+    );
     //const actualData = res.json();
     console.log(res.data);
     //console.log(actualData);
