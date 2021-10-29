@@ -28,15 +28,55 @@ const Statewise = () => {
 
   function showData() {
     let rows = [];
+    const state = {
+      AN: "Andaman and Nicobar Islands",
+      AP: "Andhra Pradesh",
+      AR: "Arunachal Pradesh",
+      AS: "Assam",
+      BR: "Bihar",
+      CH: "Chandigarh",
+      CT: "Chattisgarh",
+      DL: "Delhi",
+      DN: "Dehradun",
+      GA: "Goa",
+      GJ: "Gujarat",
+      HP: "Himachal Pradesh",
+      HR: "Haryana",
+      JH: "Jharkhand",
+      JK: "Jammu and Kashmir",
+      KA: "Karnataka",
+      KL: "Kerala",
+      LA: "Lakshadweep",
+      LD: "Ladakh",
+      MH: "Maharashtra",
+      ML: "Meghalaya",
+      MN: "Manipur",
+      MP: "Madhya Pradesh",
+      MZ: "Mizoram",
+      NL: "Nagaland",
+      OR: "Orissa",
+      PB: "Punjab",
+      PY: "Puducherry",
+      RJ: "Rajasthan",
+      SK: "Sikkim",
+      TG: "Telangana",
+      TN: "Tamil Nadu",
+      TR: "Tripura",
+      TT: "Thiruvananthapuram",
+      UP: "Uttar Pradesh",
+      UT: "Uttrakhand",
+      WB: "West Bengal",
+    };
 
     for (let value in data) {
       let row = (
         <tr>
-          <td>{value}</td>
+          <td>{state[value]}</td>
           <td>{data[value].total.confirmed}</td>
           <td>{data[value].total.deceased}</td>
           <td>{data[value].total.recovered}</td>
           <td>{data[value].total.tested}</td>
+          <td>{data[value].total.vaccinated1}</td>
           <td>{data[value].total.vaccinated2}</td>
         </tr>
       );
@@ -62,6 +102,7 @@ const Statewise = () => {
                 <th>active</th>
                 <th>recovered</th>
                 <th>Tested</th>
+                <th>vaccinated1</th>
                 <th>vaccinated2</th>
               </tr>
             </thead>
